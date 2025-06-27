@@ -44,8 +44,5 @@ public class CustomerService {
         }
         customer.setCustAccountBalance(customer.getCustAccountBalance() - amount);
         return customer;
-
     }
-
-
 }
