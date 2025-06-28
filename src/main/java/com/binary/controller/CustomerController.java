@@ -11,6 +11,7 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/customers")
+
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -20,10 +21,9 @@ public class CustomerController {
         return ResponseEntity.ok(customerService.save(customer));
     }
 
-
     @GetMapping("/findbyid/{custId}")
     public ResponseEntity<Optional<Customer>> findById(@PathVariable long custId) {
-        return ResponseEntity.ok(customerService.findById(custId));
+        return ResponseEntity.ok(Optional.ofNullable(customerService.findById(custId)));
 
     }
 
